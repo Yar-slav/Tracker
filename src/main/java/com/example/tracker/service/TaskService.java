@@ -8,7 +8,9 @@ import com.example.tracker.model.dto.TaskResponseDto;
 import com.example.tracker.model.dto.TaskTimeDto;
 import com.example.tracker.repository.TaskRepo;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
@@ -72,6 +74,17 @@ public class TaskService {
         } else {
             throw new ResponseStatusException(HttpStatusCode.valueOf(404), "Task not found");
         }
+    }
+
+    public List<TaskResponseDto> getTasksByProjectId(Long id) {
+        List<Task> taskList = taskRepo.findAllByProjectId(id);
+        return taskList.stream()
+                .map(taskMapper::toTaskResponseDto)
+                .collect(Collectors.toList());
+    }
+
+    public void deleteTask(Long id) {
+        taskRepo.deleteById(id);
     }
 }
 

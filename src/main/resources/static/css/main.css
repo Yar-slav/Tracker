@@ -1,0 +1,57 @@
+/* Загальні стилі для навігаційного меню */
+.me-auto {
+    margin-right: auto!important;
+}
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333; /* Колір по замовчуванню для посилань */
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007BFF; /* Колір при наведенні на посилання */
+}
+
+/* Додаткові стилі для навігаційного меню */
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.bg-body-tertiary {
+    background-color: #f8f9fa; /* Колір фону */
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6; /* Додати підліну внизу */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.active {
+    font-weight: bold; /* Застосування жирного шрифту для активного посилання */
+}

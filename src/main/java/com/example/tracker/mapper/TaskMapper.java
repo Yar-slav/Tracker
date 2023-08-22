@@ -12,5 +12,6 @@ public interface TaskMapper {
     Task toTask(TaskRequestDto taskRequestDto);
 
     @Mapping(target = "projectId", source = "project.id")
+    @Mapping(target = "projectName", source = "project.name")
     TaskResponseDto toTaskResponseDto(Task task);
 }

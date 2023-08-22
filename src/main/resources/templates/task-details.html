@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Time Tracker</title>
+</head>
+<body>
+<h1>Task Details</h1>
+<h2>
+    <a th:href="@{'/projects/' + ${task.getProjectId()}}">
+        <span th:text="${task.projectName}"></span>
+    </a>
+</h2>
+
+<h2 th:text="${task.name}"></h2> <!-- Вивід назви таски -->
+<p th:text="${task.timeSpent}"></p> <!-- Вивід витраченого часу -->
+
+<form th:action="@{/tasks/time}" method="post" th:object="${taskTimeDto}">
+    <input type="hidden" name="id" th:value="${task.id}" />
+    <label for="timeSpent">Time Spent:</label>
+    <input type="text" id="timeSpent" name="timeSpent" required>
+    <button type="submit">Save Time</button>
+</form>
+
+<form th:action="@{/tasks}" method="delete" th:object="${task}">
+    <input type="hidden" name="id" th:value="${task.id}" />
+    <button type="submit">Delete Task</button>
+</form>
+</body>
+</html>

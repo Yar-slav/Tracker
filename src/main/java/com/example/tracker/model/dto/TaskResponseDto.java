@@ -13,17 +13,8 @@ public class TaskResponseDto {
 
     private Long id;
     private Long projectId;
+    private String projectName;
     private String name;
     private String timeSpent;
 
-//    public void setTimeSpentFromLocalTime(LocalTime timeSpent) {
-//        this.timeSpent = String.format("%d:%02d", timeSpent.getHour(), timeSpent.getMinute());
-//    }
-//
-//    public LocalTime getTimeSpentAsLocalTime() {
-//        String[] parts = timeSpent.split(":");
-//        int hours = Integer.parseInt(parts[0]);
-//        int minutes = Integer.parseInt(parts[1]);
-//        return LocalTime.of(hours, minutes);
-//    }
 }
